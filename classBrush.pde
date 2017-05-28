@@ -1,4 +1,4 @@
-float aBrush = 0.001;
+float aBrush = 0.004;
 
 class Brush {
   int res;
@@ -18,8 +18,8 @@ class Brush {
     for( int i = 0 ; i < numBands ; i++ ) {
       float a  = float(i) / float(numBands);
       bandStart[i] = a;
-      bandColor[i] = hsbColor( a*360 , 1 , 1 );
-      println( a*360);
+      bandColor[i] = hsbColor( a*360*PI , 1 , 1 );
+      println( a*720*PI);
     }
     this.t = 0;
     this.colorVal = new color[res];
@@ -38,7 +38,7 @@ class Brush {
         }
       }
       if( !colorDone ) {
-        colorVal[i] = color(0);
+        colorVal[i] = color(0,0,0,255);
       }
     }
   }
